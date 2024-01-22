@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Add movie:</h1>
-
+<%if(request.getSession()!=null){ %>
 <form action="savemovie" method="post" enctype="multipart/form-data">
 	
 	 <label for="id">Id:</label>
@@ -35,5 +35,10 @@
         <input type="submit">
         <input type="reset">
 	</form>
+	<%} else{%>
+	<%request.setAttribute("message"," sorry access denied ,login required... ");
+	RequestDispatcher dispatcher=request.getRequestDispatcher("adminlogin.jsp");
+	dispatcher.include(request, response);%>
+	<%} %>
 </body>
 </html>

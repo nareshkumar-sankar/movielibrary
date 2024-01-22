@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import org.w3c.dom.stylesheets.LinkStyle;
@@ -44,16 +45,24 @@ public class SaveMovie extends HttpServlet{
     	Dao dao =new Dao();
     	
     	try {
-			dao.saveMovie(movie);
-			List<Movie> movies =dao.getAllMovies();
-			req.setAttribute("movies", movies);
-			RequestDispatcher dispatcher =req.getRequestDispatcher("adminhome.jsp");
-			dispatcher.include(req, resp);
+    		HttpSession session =req.getSession();
+    		String adminName =(String) session.getAttribute("adminname");
+			if (adminName!=null) {
+				
+				dao.saveMovie(movie);
+				List<Movie> movies =dao.getAllMovies();
+				req.setAttribute("movies", movies);
+				RequestDispatcher dispatcher =req.getRequestDispatcher("adminhome.jsp");
+				dispatcher.include(req, resp);
+			}
+			else {
+				req.setAttribute("message","Sorry access denied, Login required please...");
+				RequestDispatcher dispatcher=req.getRequestDispatcher("adminlogin.jsp");
+				dispatcher.include(req, resp);
+			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
 }
-
-//jjj
