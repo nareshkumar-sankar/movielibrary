@@ -8,31 +8,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-table,td,th{
-border: 2px solid black;
-border-collapse: collapse;
-width: 100vh;
-}
-th,td{
-padding: 5px;
-}
-a{
-text-decoration: none;
-}
-</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/adminhome.css"> 
 </head>
+
 <body>
+	<div >
 	<h1>Admin home:</h1>
-<h4><a href="addmovie.jsp">Add movie</a></h4>
-<br>
-<br>
-<h4><a href="logout">LogOut</a></h4>
-<br>
-<br>
+	<div class="flex">
+<h4><a class="link1" href="addmovie.jsp">Add movie</a></h4>
+<h4><a class="link2"href="logout">LogOut</a></h4>
+	</div>
+
 <% List<Movie>  movies = (List)request.getAttribute("movies");%>
 
-<table>
+<table class="table-responsive table align-middle border border-black table-danger">
 <tr>
 
 <th>Id</th>
@@ -58,13 +52,15 @@ text-decoration: none;
 <%String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>
 <td><img src="data:image/jpeg;base64,<%=base64image%>" height="200px" width="200px"></td>
 
-<td><button><a href="deletemovie?id=<%=m.getMovieid()%>">Delete</a></button></td>
-<td><button><a href="editmovie?id=<%=m.getMovieid()%>">Edit</a></button></td>
+<td><a href="deletemovie?id=<%=m.getMovieid()%>">Delete</a></td>
+<td><a href="editmovie?id=<%=m.getMovieid()%>">Edit</a></td>
 
 </tr>
 
 <%}%>
 
 </table>
+	
+	</div>
 </body>
 </html>

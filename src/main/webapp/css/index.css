@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.index {
+    border: 1px solid black;
+    padding: 63px 0;
+    margin: 161px 478px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: plum;
+    
+}
+.link a{
+	color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 7px 20px;	
+    font-size: large;
+}
+.user{
+	color: purple;
+}
+body{
+	
+	font-family: sans-serif;
+	
+}
+.index .icon{
+	width: 117px;
+    display: flex;
+    margin-left: 205px;
+    padding-bottom: 12px;
+}
+.link{
+	word-spacing: 50px;
+}
+.link a:hover{
+	background-color: cyan;
+	color: rgb(255, 0, 0);
+}
+h1{
+  margin-bottom: 42px;
+}

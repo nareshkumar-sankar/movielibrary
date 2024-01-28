@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.login{
+	border: 1px solid black;
+    padding: 63px 0;
+    margin: 161px 478px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: plum;
+}
