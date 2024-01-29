@@ -184,6 +184,28 @@ public class Dao {
 			return null;
 		}
 	}
-
 	
+	public int saveUserAndMovieId(int user ,int movie) throws ClassNotFoundException, SQLException {
+		Connection conn=getConnection();
+		PreparedStatement pst =conn.prepareStatement("insert into usermovies values(?,?)");
+		pst.setInt(1, user);
+		pst.setInt(2, movie);
+		
+		return pst.executeUpdate();
+	}
+	public boolean checkUserAndMovie(int user,int movie) throws ClassNotFoundException, SQLException {
+		Connection conn=getConnection();
+		PreparedStatement pst =conn.prepareStatement("select * from usermovies where userid=? and movieid=?");
+		pst.setInt(1, user);
+		pst.setInt(2, movie);
+		ResultSet rs = pst.executeQuery();
+		
+		if (rs.next()) {
+			return false;
+		}
+		else {
+			return true;
+		}
+		
+	}
 }

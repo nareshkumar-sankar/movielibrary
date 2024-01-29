@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.Dao;
 import DTO.Movie;
@@ -26,6 +27,8 @@ public class UserLogin extends HttpServlet{
 			User user=dao.FindByEmailUser(email);
 			if (user!=null) {
 				if (password.equals(user.getPassword())) {
+					HttpSession session=req.getSession();
+					session.setAttribute("user", user);
 					List<Movie> movies =dao.getAllMovies();
 					req.setAttribute("movies", movies);
 					RequestDispatcher dispatcher =req.getRequestDispatcher("userhome.jsp");

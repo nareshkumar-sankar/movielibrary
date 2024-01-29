@@ -10,6 +10,14 @@ public class Movie {
 	private String moviegenre;
 	private String movielanguage;
 	private byte[] movieimage;
+	private String moviedescription;
+	
+	public String getMoviediscription() {
+		return moviedescription;
+	}
+	public void setMoviediscription(String moviediscription) {
+		this.moviedescription = moviediscription;
+	}
 	public int getMovieid() {
 		return movieid;
 	}
