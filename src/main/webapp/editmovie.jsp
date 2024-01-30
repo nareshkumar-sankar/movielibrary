@@ -27,8 +27,10 @@
 		<input type="text" name="user-language" id="language" value="<%= m.getMovielanguage() %>"><br>
 		 <label for="image">Image:</label>
 		<input type="file" name="user-image" id="image"><br>
+		 <label for="link">link:</label>
+		<input type="text" name="user-link" id="link" value="<%= m.getMovielink() %>"><br>
 		
-		<input type="submit">`
+		<input type="submit">
 		
 		
 		<% String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>

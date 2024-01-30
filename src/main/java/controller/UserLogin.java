@@ -29,6 +29,7 @@ public class UserLogin extends HttpServlet{
 				if (password.equals(user.getPassword())) {
 					HttpSession session=req.getSession();
 					session.setAttribute("user", user);
+					session.setAttribute("username",user.getName());
 					List<Movie> movies =dao.getAllMovies();
 					req.setAttribute("movies", movies);
 					RequestDispatcher dispatcher =req.getRequestDispatcher("userhome.jsp");

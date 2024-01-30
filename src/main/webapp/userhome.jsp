@@ -30,16 +30,16 @@ text-decoration: none;
 <%HttpSession session1 =request.getSession();%>
 <% List<Movie>  movies = (List)request.getAttribute("movies");%>
 
-<a href="watchmovie">Watch Movies</a>
-<a href="logout">Log Out</a>
+<a href="watchmovie">Movie Cart</a>
+<a href="logoutuser">Log Out</a>
 <br>
 <%String msg =(String)request.getAttribute("message"); %>
  <%if(msg!=null){ %>
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="alert alert-warning alert-dismissible fade show" role="alert" style="width: fit-content">
    <%=msg%>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
- <%} %></h3>
+ <%} %>
 <table>
 <tr>
 
@@ -65,7 +65,6 @@ text-decoration: none;
 <td><%=m.getMovielanguage() %></td>
 <%String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>
 <td><img src="data:image/jpeg;base64,<%=base64image%>" height="200px" width="200px"></td>
-
 <td><button><a href="buymovie?id=<%=m.getMovieid()%>">Buy</a></button>
 </td>
 

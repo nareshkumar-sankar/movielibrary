@@ -10,19 +10,20 @@ public class Movie {
 	private String moviegenre;
 	private String movielanguage;
 	private byte[] movieimage;
-	private String moviedescription;
+	private String movielink;
 	
-	public String getMoviediscription() {
-		return moviedescription;
-	}
-	public void setMoviediscription(String moviediscription) {
-		this.moviedescription = moviediscription;
-	}
+	
 	public int getMovieid() {
 		return movieid;
 	}
 	public void setMovieid(int movieid) {
 		this.movieid = movieid;
+	}
+	public String getMovielink() {
+		return movielink;
+	}
+	public void setMovielink(String movielink) {
+		this.movielink = movielink;
 	}
 	public String getMoviename() {
 		return moviename;

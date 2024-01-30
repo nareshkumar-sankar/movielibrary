@@ -31,6 +31,7 @@ public class SaveMovie extends HttpServlet{
     	String genre =req.getParameter("user-genre");
     	String language =req.getParameter("user-language");
     	Part imagepart =req.getPart("user-image");
+    	String link =req.getParameter("user-link");
     	
     	Movie movie =new Movie();
     	
@@ -41,6 +42,7 @@ public class SaveMovie extends HttpServlet{
     	movie.setMoviegenre(genre);
     	movie.setMovielanguage(language);
     	movie.setMovieimage(imagepart.getInputStream().readAllBytes());
+    	movie.setMovielink(link);
     	
     	Dao dao =new Dao();
     	

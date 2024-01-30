@@ -21,7 +21,7 @@
 	<h1>Admin home:</h1>
 	<div class="flex">
 <h4><a class="link1" href="addmovie.jsp">Add movie</a></h4>
-<h4><a class="link2"href="logout">LogOut</a></h4>
+<h4><a class="link2"href="logoutadmin">LogOut</a></h4>
 	</div>
 
 <% List<Movie>  movies = (List)request.getAttribute("movies");%>
@@ -49,9 +49,9 @@
 <td><%=m.getMovieratings() %></td>
 <td><%=m.getMoviegenre() %></td>
 <td><%=m.getMovielanguage() %></td>
+
 <%String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>
 <td><img src="data:image/jpeg;base64,<%=base64image%>" height="200px" width="200px"></td>
-
 <td><a href="deletemovie?id=<%=m.getMovieid()%>">Delete</a></td>
 <td><a href="editmovie?id=<%=m.getMovieid()%>">Edit</a></td>
 

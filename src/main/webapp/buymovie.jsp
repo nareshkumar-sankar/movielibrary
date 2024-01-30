@@ -11,7 +11,7 @@
 <% HttpSession session1 =request.getSession();%>
 <%Movie movie=(Movie)session.getAttribute("movie"); %>
 <form action="checkpayment" method="post">
-payment<input type="number" id="price" name="movie-price" placeholder="you need to pay  <%=movie.getMovieprice()%>">
+payment<input type="number" id="price" name="movie-price" placeholder="you need to pay  <%=movie.getMovieprice()%>" autofocus="autofocus">
 <input type="submit">pay
 </form>
 <%String msg =(String)request.getAttribute("messgae");%>

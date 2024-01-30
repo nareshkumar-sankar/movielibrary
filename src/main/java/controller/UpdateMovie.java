@@ -29,6 +29,7 @@ public class UpdateMovie extends HttpServlet{
 		String moviegenre = req.getParameter("user-genre");
 		String movielanguage = req.getParameter("user-language");
 		Part imagepart  = req.getPart("user-image");
+		String link =req.getParameter("user-link");
 		
 		Dao dao = new Dao();
 		
@@ -39,6 +40,7 @@ public class UpdateMovie extends HttpServlet{
 		movie.setMovieprice(movieprice);
 		movie.setMovieratings(movierating);
 		movie.setMoviename(moviename);
+		movie.setMovielink(link);
 		
 		
 		try {

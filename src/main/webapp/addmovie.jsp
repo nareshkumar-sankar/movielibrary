@@ -38,6 +38,9 @@
          <label for="image">Image:</label>
         <input type="file" name="user-image" id="image">
         <br>
+         <label for="link">link:</label>
+        <input type="text" name="user-link" id="link">
+        <br>
         <input type="submit">
         <input type="reset">
 	</form>
