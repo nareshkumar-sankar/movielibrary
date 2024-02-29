@@ -11,43 +11,70 @@
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/addmovie.css"> 
+	<link rel="stylesheet" href="demo.css">
 </head>
 <body>
-<h1>Add movie:</h1>
-<%if(request.getSession()!=null){ %>
-<form action="savemovie" method="post" enctype="multipart/form-data">
-	
-	 <label for="id">Id:</label>
-        <input type="number" name="user-id" id="id">
-        <br>
-         <label for="name">Name:</label>
-        <input type="text" name="user-name" id="name">
-        <br>
-         <label for="price">Price:</label>
-        <input type="number" name="user-price" id="price">
-        <br>
-         <label for="ratings">Ratings:</label>
-        <input type="number" name="user-ratings" id="ratings">
-        <br>
-         <label for="genre">Genre:</label>
-        <input type="text" name="user-genre" id="genre">
-        <br>
-         <label for="language">Language:</label>
-        <input type="text" name="user-language" id="language">
-        <br>
-         <label for="image">Image:</label>
-        <input type="file" name="user-image" id="image">
-        <br>
-         <label for="link">link:</label>
-        <input type="text" name="user-link" id="link">
-        <br>
-        <input type="submit">
-        <input type="reset">
-	</form>
-	<%} else{%>
-	<%request.setAttribute("message"," sorry access denied ,login required... ");
-	RequestDispatcher dispatcher=request.getRequestDispatcher("adminlogin.jsp");
-	dispatcher.include(request, response);%>
-	<%} %>
+	<div class="login">
+		<div class="head">
+      <h1>Add movie</h1>
+      
+	  <%if(request.getSession()!=null){ %>
+    </div>
+		<div class="form">
+			<form action="savemovie" method="post" enctype="multipart/form-data">
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="number" class="form-control" id="floatingInput" name="user-id"
+						placeholder="name@example.com"> <label for="floatingInput">id</label>
+				</div>
+
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="text" class="form-control" id="floatingInput" name="user-name"
+						placeholder="name@example.com"> <label for="floatingInput">Name</label>
+				</div>
+
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="number" class="form-control" id="floatingInput" name="user-price"
+						placeholder="name@example.com"> <label for="floatingInput">Price</label>
+				</div>
+
+		<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="number" class="form-control" id="floatingInput" name="user-ratings"
+						placeholder="name@example.com"> <label for="floatingInput">Ratings</label>
+				</div>
+
+		<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="text" class="form-control" id="floatingPassword" name="user-genre"
+						placeholder="Password"> <label for="floatingPassword">Genre</label>
+				</div>
+
+		<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="text" class="form-control" id="floatingPassword" name="user-language"
+						placeholder="Password"> <label for="floatingPassword">Language</label>
+				</div>
+
+		<div class="input-group row-sm-11 mb-3 border border-success">
+					<input type="file" class="form-control" id="inputGroupFile02" name="user-image">
+					<label class="input-group-text" for="inputGroupFile02">Upload</label>
+				</div>
+
+		<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="text" class="form-control" id="floatingPassword" name="user-link"
+						placeholder="text"> <label for="floatingPassword">Link</label>
+				</div>
+				
+		<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="text" class="form-control" id="floatingPassword" name="user-description"
+						placeholder="text"> <label for="floatingPassword">Description</label>
+				</div>
+
+						<button type="submit" class="shadow__btn">Submit</button>
+			</form>
+			<%} else{%>
+	     <%request.setAttribute("message"," sorry access denied ,login required... ");
+	     RequestDispatcher dispatcher=request.getRequestDispatcher("adminlogin.jsp");
+	     dispatcher.include(request, response);%>
+	     <%} %>
+		</div>
+  </div>
 </body>
 </html>

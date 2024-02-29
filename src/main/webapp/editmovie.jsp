@@ -29,6 +29,8 @@
 		<input type="file" name="user-image" id="image"><br>
 		 <label for="link">link:</label>
 		<input type="text" name="user-link" id="link" value="<%= m.getMovielink() %>"><br>
+		<label for="link">Description:</label>
+		<input type="text" name="user-description" id="link" value="<%= m.getMoviedescription() %>"><br>
 		
 		<input type="submit">
 		

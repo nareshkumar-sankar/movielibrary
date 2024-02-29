@@ -1,17 +1,18 @@
 @charset "UTF-8";
-body{
+@charset "UTF-8";
+html{
     background-color: rgb(232,232,232);
+    height: 100vh;
 }
 .card-title{
     color: #00AB6B;
     margin-bottom: 30px  ;
 }
-.col-md-4{
-    width: 179px;
-    margin-top: 20px;
-}
 .cnt{
     text-align: center;
+}
+.card-body{
+    width: 550px;
 }
 .card{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -19,6 +20,7 @@ body{
     left: 500px;
     top: 250px;
 }
+
 span {
     display: inline-block;
     border-radius: 4px;
@@ -27,7 +29,7 @@ span {
     text-align: center;
     font-size: 17px;
     padding: 10px;
-    width: 100px;
+    width: 170px;
     transition: all 0.6s;
    }
    
@@ -37,6 +39,7 @@ span {
     transition: 0.5s;
     text-decoration: none;
     color: #FFFFFF;
+    width: 150px;
    }
    
    span a:after {
@@ -58,4 +61,7 @@ span {
    }
    .card-body {
     margin: 30px  0px;
+   }
+   .card-body .card-title{
+    margin-bottom: 30px;
    }

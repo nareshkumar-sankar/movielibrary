@@ -11,8 +11,15 @@ public class Movie {
 	private String movielanguage;
 	private byte[] movieimage;
 	private String movielink;
+	private String moviedescription;
 	
 	
+	public String getMoviedescription() {
+		return moviedescription;
+	}
+	public void setMoviedescription(String moviedescription) {
+		this.moviedescription = moviedescription;
+	}
 	public int getMovieid() {
 		return movieid;
 	}

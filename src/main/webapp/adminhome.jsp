@@ -8,59 +8,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/adminhome.css"> 
+	<link rel="stylesheet" href="./css/adminhome-.css"> 
 </head>
 
 <body>
-	<div >
-	<h1>Admin home:</h1>
-	<div class="flex">
-<h4><a class="link1" href="addmovie.jsp">Add movie</a></h4>
-<h4><a class="link2"href="logoutadmin">LogOut</a></h4>
+	<div class="nav">
+	   <div><h3>Admin Home</h3></div>
+		<div><a class="link1" href="addmovie.jsp">Add movie</a>
+        <a class="link2"href="logoutadmin">LogOut</a></div>
 	</div>
 
+<div class="grid">
 <% List<Movie>  movies = (List)request.getAttribute("movies");%>
 
-<table class="table-responsive table align-middle border border-black table-danger">
-<tr>
 
-<th>Id</th>
-<th>Name</th>
-<th>Price</th>
-<th>Ratings</th>
-<th>Genre</th>
-<th>Language</th>
-<th>Image</th>
-<th>Delete</th>
-<th>Edit</th>
-
-</tr>
 <%for(Movie m : movies){ %>
-<tr>
 
-<td><%=m.getMovieid()%></td>
-<td><%=m.getMoviename() %></td>
-<td><%=m.getMovieprice() %></td>
-<td><%=m.getMovieratings() %></td>
-<td><%=m.getMoviegenre() %></td>
-<td><%=m.getMovielanguage() %></td>
 
-<%String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>
-<td><img src="data:image/jpeg;base64,<%=base64image%>" height="200px" width="200px"></td>
-<td><a href="deletemovie?id=<%=m.getMovieid()%>">Delete</a></td>
-<td><a href="editmovie?id=<%=m.getMovieid()%>">Edit</a></td>
 
-</tr>
+
+	<div class="container">
+  <div class="poster">
+    <div class="poster__img">
+    <%String base64image = new String(Base64.getEncoder().encode(m.getMovieimage())); %>
+<img src="data:image/jpeg;base64,<%=base64image%>" height="200px" width="200px">
+    </div>
+    <div class="poster__info">
+      <h1 class="poster__title title"><%=m.getMoviename() %></h1>
+      <h5><span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half"></i><%=m.getMovieratings() %></span></h5>
+      <span>$<%=m.getMovieprice() %></span>
+      <span><%=m.getMoviegenre() %></span>
+      <span><%=m.getMovielanguage() %></span>
+      <h3 class="head">SUMMARY</h3>
+      <p class="dpn"><%=m.getMoviedescription() %></p>
+       <a href="deletemovie?id=<%=m.getMovieid()%>">Delete</a>
+  <a href="editmovie?id=<%=m.getMovieid()%>">Edit</a>
+    </div>
+  </div>
+ 
+</div>
 
 <%}%>
 
-</table>
-	
 	</div>
+	
+	
+<script src="https://kit.fontawesome.com/f82deb100f.js" crossorigin="anonymous"></script>
 </body>
 </html>

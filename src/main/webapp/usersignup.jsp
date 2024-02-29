@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Signup</title>
+<link rel="stylesheet" href="./css/adminsignup-.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -12,23 +13,40 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<form action="usersigup" method="post">
-	<label for="id">Id:</label>
-	<input class="form-control" type="number" name="user-id" id="id" autofocus="autofocus">
-	<br>
-	<label for="name">Name:</label>
-	<input type="text" name="user-name" id="name" autofocus="autofocus">
-	<br>
-	<label for="contact">Contact:</label>
-	<input type="tel" name="user-contact" id="contact" autofocus="autofocus">
-	<br>
-	<label for="email">Email:</label>
-	<input type="email" name="user-email" id="email" autofocus="autofocus">
-	<br>
-	<label for="password">Password:</label>
-	<input type="password" name="user-password" id="password" autofocus="autofocus">
-	<br>
-	<input type="submit">
-	</form>
+	
+  <div class="login">
+		<div class="head">
+      <h1>User Signup</h1>
+    </div>
+		<div class="form">
+			<form action="usersignup" method="post">
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="email" class="form-control" id="floatingInput" name="user-id"
+						placeholder="name@example.com"> <label for="floatingInput">id</label>
+				</div>
+
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="email" class="form-control" id="floatingInput" name="user-name"
+						placeholder="name@example.com"> <label for="floatingInput">Name</label>
+				</div>
+
+        <div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="email" class="form-control" id="floatingInput" name="user-contact"
+						placeholder="name@example.com"> <label for="floatingInput">Contact</label>
+				</div>
+
+				<div class="form-floating col-sm-11 mb-3 border border-success">
+					<input type="email" class="form-control" id="floatingInput" name="user-email"
+						placeholder="name@example.com"> <label for="floatingInput">Email</label>
+				</div>
+
+				<div class="form-floating col-sm-11 border border-success">
+					<input type="password" class="form-control" id="floatingPassword" name="user-password"
+						placeholder="Password"> <label for="floatingPassword">Password</label>
+				</div>
+						<button type="submit" class="shadow__btn">Submit</button>
+			</form>
+		</div>
+  </div>
 </body>
 </html>

@@ -6,7 +6,7 @@ html{
 .login{
     position: absolute;
     left: 35%;
-    top: 25%;
+    top: 10%;
     width: 500px;
     padding: 40px 50px;
     background-color: white;
@@ -23,7 +23,7 @@ margin-bottom: 40px;
     padding: 10px 20px;
     border: none;
     font-size: 17px;
-    color: #fff;
+    color: #ffff;
     border-radius: 7px;
     letter-spacing: 4px;
     font-weight: 700;

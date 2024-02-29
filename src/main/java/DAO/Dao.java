@@ -62,7 +62,7 @@ public class Dao {
 	public int saveMovie(Movie movie) throws SQLException, ClassNotFoundException {
 
 		Connection conn = getConnection();
-		PreparedStatement pst = conn.prepareStatement("insert into movie values(?,?,?,?,?,?,?,?)");
+		PreparedStatement pst = conn.prepareStatement("insert into movie values(?,?,?,?,?,?,?,?,?)");
 
 		pst.setInt(1, movie.getMovieid());
 		pst.setString(2, movie.getMoviename());
@@ -73,7 +73,7 @@ public class Dao {
 		Blob imageblob = new SerialBlob(movie.getMovieimage());
 		pst.setBlob(7, imageblob);
 		pst.setString(8, movie.getMovielink());
-
+		pst.setString(9, movie.getMoviedescription());
 		return pst.executeUpdate();
 
 	}
@@ -98,6 +98,7 @@ public class Dao {
 			byte[] img = b.getBytes(1, (int) b.length());
 			movie.setMovieimage(img);
 			movie.setMovielink(rs.getString(8));
+			movie.setMoviedescription(rs.getString(9));
 			moviesList.add(movie);
 		}
 		return moviesList;
@@ -138,6 +139,7 @@ public class Dao {
 		byte[] img = b.getBytes(1, (int) b.length());
 		m.setMovieimage(img);
 		m.setMovielink(rs.getString(8));
+		m.setMoviedescription(rs.getString(9));
 		return m;
 
 	}
@@ -146,9 +148,9 @@ public class Dao {
 
 		Connection conn = getConnection();
 		PreparedStatement pst = conn.prepareStatement(
-				"update movie set moviename=?, movieprice=?,movieratings=?,moviegenre=?,movielanguage=?,movieimage=?, movielink=? where movieid=?");
+				"update movie set moviename=?, movieprice=?,movieratings=?,moviegenre=?,movielanguage=?,movieimage=?, movielink=? , moviedescription=? where movieid=?");
 
-		pst.setInt(8, movie.getMovieid());
+		pst.setInt(9, movie.getMovieid());
 		pst.setString(1, movie.getMoviename());
 		pst.setDouble(2, movie.getMovieprice());
 		pst.setDouble(3, movie.getMovieratings());
@@ -157,6 +159,7 @@ public class Dao {
 		Blob imageBlob = new SerialBlob(movie.getMovieimage());
 		pst.setBlob(6, imageBlob);
 		pst.setString(7, movie.getMovielink());
+		pst.setString(8, movie.getMoviedescription());
 		return pst.executeUpdate();
 	}
 
@@ -240,6 +243,7 @@ public class Dao {
 			byte[] img=b.getBytes(1, (int)b.length());
 			movie.setMovieimage(img);
 			movie.setMovielink(rs.getString(8));
+			movie.setMoviedescription(rs.getString(9));
 			movies.add(movie);
 			
 		}

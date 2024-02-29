@@ -22,7 +22,7 @@ public class CheckPayment extends HttpServlet {
 		User user = (User) session.getAttribute("user");
 		Movie movie = (Movie) session.getAttribute("movie");
 		
-		double price =Double.parseDouble(req.getParameter("movie-price"));
+		double price =Double.parseDouble(req.getParameter("user-price"));
 		Dao dao =new Dao();
 		if (price==movie.getMovieprice()) {
 			try {
@@ -36,7 +36,7 @@ public class CheckPayment extends HttpServlet {
 				e.printStackTrace();
 			}
 		}else {
-			req.setAttribute("message","*your pay amount is invalid");
+			req.setAttribute("message1","*your pay amount is invalid");
 			RequestDispatcher dispatcher=req.getRequestDispatcher("buymovie.jsp");
 			dispatcher.include(req, resp);
 		}

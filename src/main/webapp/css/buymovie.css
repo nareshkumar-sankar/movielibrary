@@ -1,21 +1,22 @@
 @charset "UTF-8";
-html{
-    background-color: rgb(232,232,232);
-    height: 100vh;
-}
+
 .login{
     position: absolute;
     left: 35%;
-    top: 25%;
+    top: 10%;
     width: 500px;
-    padding: 40px 50px;
+    padding: 10px 0px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    top: 200px;
+    height: 40%;
 }
 .login .head{
-   margin-left: 80px;
-margin-bottom: 40px;
+    margin-left: 170px;
+    margin-bottom: 20px;
 }
+
 .form{
     margin-left: 40px;
 }
@@ -23,21 +24,20 @@ margin-bottom: 40px;
     padding: 10px 20px;
     border: none;
     font-size: 17px;
-    color: #fff;
+    color: #ffff;
     border-radius: 7px;
     letter-spacing: 4px;
     font-weight: 700;
     text-transform: uppercase;
     transition: 0.3s;
     transition-property: box-shadow;
-    margin-left: 100px;
+    margin-left: 170px;
     margin-top: 20px;
   }
   
   .shadow__btn {
     background: #00AB6B;
   }
-
   .shadow__btn:hover {
     box-shadow: 0 0 5px #00AB6B,
                 0 0 25px #00AB6B;       
